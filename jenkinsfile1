@@ -1,0 +1,16 @@
+pipeline {
+        agent any
+        stages {
+            stage('Clean mon projet') {
+                steps {
+                    cleanWs()
+                }
+            }
+            stage('CheckOut SCM') {
+                steps {
+                    //sh "git clone https://github.com/ThomasDufour78/b3depotgithub.git"
+                    git branch: 'main', credentialsId: 'root', url: 'https://github.com/ThomasDufour78/b3depotgithub.git'
+                }
+            }
+        }
+}
