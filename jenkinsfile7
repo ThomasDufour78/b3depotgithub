@@ -7,7 +7,7 @@ pipeline {
             steps {
                 cleanWs()
                 git branch: 'main',
-                    credentialsId: 'root'
+                    credentialsId: 'root',
                     url: 'https://github.com/ThomasDufour78/b3depotgithub.git'
             }
         }
