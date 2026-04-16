@@ -1,9 +1,9 @@
 ## Star History
 
-<a href="https://www.star-history.com/?repos=fastfire%2FdeepdarkCTI&type=date&legend=bottom-right">
+<a href="https://www.star-history.com/?repos=ThomasDufour78%2Fb3depotgithub&type=date&legend=bottom-right">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=fastfire/deepdarkCTI&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=fastfire/deepdarkCTI&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=fastfire/deepdarkCTI&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ThomasDufour78/b3depotgithub&type=date&theme=dark&legend=bottom-right" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ThomasDufour78/b3depotgithub&type=date&legend=bottom-right" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ThomasDufour78/b3depotgithub&type=date&legend=bottom-right" />
  </picture>
 </a>
