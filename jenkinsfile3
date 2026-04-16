@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage('CheckOut-SCM') {
+            steps {
+                cleanWs()
+                git branch: 'main', credentialsId: 'root', url: 'https://github.com/ThomasDufour78/b3depotgithub.git'
+            }
+        }
+        stage('Build-image-nginx') {
+            steps {
+                sh 'docker build -t mon-nginx .'
+            }
+        }
+    }
+}
