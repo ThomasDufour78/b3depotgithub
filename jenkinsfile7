@@ -7,8 +7,16 @@ pipeline {
             steps {
                 cleanWs()
                 git branch: 'main',
-                    credentialsId: 'root',
+                    credentialsId: 'root'
                     url: 'https://github.com/ThomasDufour78/b3depotgithub.git'
+            }
+        }
+
+        stage('Build-image-apache') {
+            steps {
+                sh '''
+                docker build -t mon-apache2 .
+                '''
             }
         }
 
@@ -21,27 +29,31 @@ pipeline {
                 docker run -d \
                     --name contapache01 \
                     --hostname contapache01 \
-                    -v ./volumecontapache01:/var/www/html \
+                    -v $(pwd)/volumecontapache01:/var/www/html \
                     --network macvlan192 \
                     --ip 192.168.1.20 \
                     mon-apache2
 
-                docker start contapache01
-
                 docker ps
-                docker exec contapache01 ifconfig
-                docker exec contapache01 service ssh start
-                docker exec contapache01 /etc/init.d/apache2 start
-                docker exec contapache01 /etc/init.d/apache2 status
                 '''
             }
         }
 
-        stage('Copy-fichiers-mysite-dans-contapache01') {
+        stage('Init-Apache') {
             steps {
                 sh '''
-                cp -r ./mysite ./volumecontapache01
-                ls ./volumecontapache01
+                docker exec contapache01 service ssh start
+                docker exec contapache01 service apache2 start
+                docker exec contapache01 service apache2 status
+                '''
+            }
+        }
+
+        stage('Copy-site') {
+            steps {
+                sh '''
+                cp -r mysite volumecontapache01
+                ls volumecontapache01
                 '''
             }
         }
