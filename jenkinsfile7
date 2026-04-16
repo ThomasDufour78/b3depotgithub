@@ -7,8 +7,8 @@ pipeline {
             steps {
                 cleanWs()
                 git branch: 'main',
-                    credentialsId: 'user-srcmed',
-                    url: 'https://github.com/srcmed/b3depogithub.git'
+                    credentialsId: 'root',
+                    url: 'https://github.com/ThomasDufour78/b3depogithub.git'
             }
         }
 
