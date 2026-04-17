@@ -4,12 +4,12 @@ pipeline {
         stage('CheckOut-SCM') {
             steps {
                 cleanWs()
-                git branch: 'main', credentialsId: 'root', url: 'https://github.com/ThomasDufour78/b3depotgithub.git'
+                git branch: 'main', credentialsId: 'root', url: 'https://github.com/ThomasDufour78/githubeval.git'
             }
         }
         stage('Build-image-nginx') {
             steps {
-                sh 'docker build -t mon-nginx .'
+                sh 'docker build -t my-nginx .'
             }
         }
     }
